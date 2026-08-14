@@ -1,27 +1,28 @@
-function welcomeCustomer(name: string): string {
-    return `Welcome, ${name}!`;
+//Parameter & Return Types
+function greet(name:string):string{
+    return `Namaste, ${name}!`;
 }
-
-function getDeliveryCity(city: string = "Bengaluru"): string {
-    return `Delivery City: ${city}`;
+//Default Parameter(=)
+function getLocation(city:string ="Hyderabad"):string{
+    return `Location: ${city}`;
 }
-
-function placeOrder(orderId: number, note?: string): void {
-    console.log(`Order ID: ${orderId}`);
-
-    if (note) {
-        console.log(`Special Note: ${note}`);
+//Optional Parameter(?)
+function sendAlert(PhNumber:number,message?:string):void{
+    console.log(`Sending SMS to ${PhNumber}...`);
+    if(message){
+        console.log(`Content: ${message}`);
     }
 }
-
-function calculateBill(...prices: number[]): number {
-    return prices.reduce((total, price) => total + price, 0);
+//Rest Parameter(using...)
+function scores(...score:number[]):number{
+    return score.reduce((total,current)=>total+current,0);
 }
-
-console.log(welcomeCustomer("Akhila"));
-
-console.log(getDeliveryCity());
-console.log(getDeliveryCity("Visakhapatnam"));
-
-placeOrder(1025);
-placeOrder(1026, "Please deliver before 6 PM");
+//Experiment Outputs
+console.log(greet("Vishnu"));
+//console.log(greet(1));
+console.log(getLocation("Bhimavaram"));
+console.log(getLocation());
+sendAlert(1234567890, "Hello, Vishnu!");
+sendAlert(1234567890);
+const total=scores(85, 90, 78, 92);
+console.log(`Total Score: ${total}`);
