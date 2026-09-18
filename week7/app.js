@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 // Home page
 app.get("/", (req, res) => {
     res.render("index", {
-        name: "chandrakala",
+        name: "Pranitha",
         error: null
     });
 });
@@ -23,14 +23,14 @@ app.post("/submit", (req, res) => {
     // Basic validation
     if (!name || !email) {
         return res.render("index", {
-            name: "chandrakala",
+            name: "Pranitha",
             error: "All fields are required!"
         });
     }
 
     if (!email.includes("@")) {
         return res.render("index", {
-            name: "chandrakala",
+            name: "Pranitha",
             error: "Enter a valid email!"
         });
     }
